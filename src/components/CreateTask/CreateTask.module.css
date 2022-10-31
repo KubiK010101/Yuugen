@@ -1,0 +1,18 @@
+/** @format */
+
+.container {
+	padding: 32px;
+}
+.title {
+	paddingleft: 2rem;
+	fontsize: 28px;
+}
+
+.form {
+	background-color: white;
+	box-shadow: 0px 8px 8px -4px #2933290a;
+	box-shadow: 0px 20px 24px -4px #2933291a;
+	padding: 32px;
+	border-radius: 8px;
+	height: 99vh;
+}

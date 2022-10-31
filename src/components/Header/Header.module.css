@@ -1,0 +1,72 @@
+/** @format */
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0px 2px 4px -2px #2933290f;
+	box-shadow: 0px 4px 8px -2px #2933291a;
+	height: 112px;
+	padding-right: 32px;
+	background-color: white;
+}
+
+.leftContainer {
+	display: flex;
+	height: 100%;
+}
+
+.logoContainer {
+	height: 100%;
+	display: flex;
+	border-right: 1px solid #f2f4f7;
+}
+
+.imageContainer {
+	display: flex;
+	padding: 0 24px;
+	align-items: center;
+}
+
+.navigationContainer {
+	display: flex;
+	align-items: center;
+}
+
+.navElementContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 160px;
+}
+
+.navIcon {
+	margin-right: 10px;
+}
+
+.notification {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	background-color: #f4f6f4;
+	border-radius: 8px;
+}
+
+.active {
+	color: #000000;
+}
+
+.inActive {
+	color: #799179;
+}
+
+.settings {
+	display: flex;
+}
+
+.settings > button {
+	background-color: transparent;
+	border: none;
+}

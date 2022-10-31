@@ -1,0 +1,30 @@
+/** @format */
+
+.todoRow {
+	display: flex;
+	height: 44px;
+	align-items: center;
+	border-bottom: 1px solid #e4e7ec;
+}
+.todoRow:hover {
+	background-color: #f9fafb;
+}
+.invoice {
+	width: 50%;
+	font-family: "Poppins";
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 20px;
+	letter-spacing: 0px;
+	text-align: left;
+	padding-left: 8px;
+	color: #101b28;
+}
+.status {
+	width: 25%;
+}
+
+.dueDate {
+	width: 25%;
+	font-weight: 300;
+}
