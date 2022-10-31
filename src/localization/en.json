@@ -1,0 +1,26 @@
+{
+	"dashboard": "Dashboard",
+	"create": "Create",
+	"mytodos": "My todo’s",
+	"invoice": "Invoice",
+	"status": "Status",
+	"dueDate": "Due date",
+	"publishReport": "Publish report",
+	"internalGovernanceControl": "Internal governance & control",
+	"iTDepartment": "IT Department",
+	"overdue": "Overdue",
+	"finished": "Finished",
+	"LatestDate": "Latest date",
+	"createNew": "Create new",
+	"title": "Title",
+	"status": "Status",
+	"description": "Description",
+	"enterDescription": "Enter a description...",
+	"errors": {
+		"notValid": "Not Valid",
+		"invalidStatus": "Invalid  Status ",
+		"text": "Text must be at least 10 characters long"
+	},
+	"selectTitle": "Status",
+	"descriptionTitle": "Description"
+}
