@@ -28,10 +28,10 @@ const DashBoard: FC = () => {
 				let overdueCount: number = 0;
 				let finishedCount: number = 0;
 				res.data.forEach((el: ITodo) => {
-					if (el.status === "overdue") {
+					if (el.status.toLocaleLowerCase() === "overdue") {
 						overdueCount++;
 					}
-					if (el.status === "finished") {
+					if (el.status.toLocaleLowerCase() === "finished") {
 						finishedCount++;
 					}
 				});
@@ -46,6 +46,7 @@ const DashBoard: FC = () => {
 				setLoader(false);
 			});
 	}, []);
+
 	return (
 		<div className={styles.container}>
 			{loader ? (
@@ -59,16 +60,20 @@ const DashBoard: FC = () => {
 							{t("mytodos")} <span className={styles.titleSpan}>{todos.length}</span>
 						</h1>
 
-						<div className={styles.table}>
-							<div className={styles.todosHeader}>
-								<span className={`${styles.invoice} ${styles.todoElement}`}>{t("invoice")}</span>
-								<span className={`${styles.status} ${styles.todoElement}`}>{t("status")}</span>
-								<span className={`${styles.dueDate} ${styles.todoElement}`}>{t("dueDate")}</span>
-							</div>
-							{todos.map((todo: ITodo) => {
-								return <TodoItem key={todo.id} todo={todo} />;
-							})}
-						</div>
+						<table className={styles.table}>
+							<thead>
+								<tr className={styles.todosHeader}>
+									<th className={styles.invoice}>{t("invoice")}</th>
+									<th className={styles.status}>{t("status")}</th>
+									<th className={styles.dueDate}>{t("dueDate")}</th>
+								</tr>
+							</thead>
+							<tbody>
+								{todos.map((todo: ITodo) => {
+									return <TodoItem key={todo.id} todo={todo} />;
+								})}
+							</tbody>
+						</table>
 					</div>
 					<div className={styles.selectedTodosConatiner}>
 						<PublishReport overdue={overdue} finished={finished} all={todos.length} latestDate={latestDate} />

@@ -50,8 +50,9 @@
 	justify-content: center;
 	width: 48px;
 	height: 48px;
-	background-color: #f4f6f4;
+	background-color: ;
 	border-radius: 8px;
+	background-color: #f4f6f4;
 }
 
 .active {
@@ -60,13 +61,4 @@
 
 .inActive {
 	color: #799179;
-}
-
-.settings {
-	display: flex;
-}
-
-.settings > button {
-	background-color: transparent;
-	border: none;
 }

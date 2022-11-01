@@ -10,10 +10,9 @@
 	"iTDepartment": "IT Department",
 	"overdue": "Overdue",
 	"finished": "Finished",
-	"LatestDate": "Latest date",
+	"latestDate": "Latest date",
 	"createNew": "Create new",
 	"title": "Title",
-	"status": "Status",
 	"description": "Description",
 	"enterDescription": "Enter a description...",
 	"errors": {

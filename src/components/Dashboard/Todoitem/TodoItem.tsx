@@ -8,30 +8,58 @@ interface Props {
 	todo: ITodo;
 }
 
-const TodoItem: FC<Props> = ({ todo: { title, status, createdAt } }) => {
+type stylesType = {
+	backgroundColor: string;
+	color: string;
+	padding: string;
+	borderRadius: number;
+};
+const TodoItem: FC<Props> = ({ todo }) => {
+	const { title, status, createdAt } = todo;
+	const styleHandler = (status: string): stylesType => {
+		let color, backgroundColor: string | undefined;
+		switch (status.toLocaleLowerCase()) {
+			case "in progress":
+				color = "#B54708";
+				backgroundColor = "#FFFAEB";
+				break;
+			case "pending":
+				color = "#344054";
+				backgroundColor = "#F2F4F7";
+				break;
+			case "overdue":
+				color = "#B42318";
+				backgroundColor = "#FEF3F2";
+				break;
+			case "draft":
+				color = "#344054";
+				backgroundColor = "#F2F4F7";
+				break;
+			case "finished":
+				color = "#027A48";
+				backgroundColor = "#ECFDF3";
+				break;
+
+			default:
+				color = "white";
+				backgroundColor = "lightblue";
+		}
+		return {
+			backgroundColor,
+			color,
+			padding: "2px 8px",
+			borderRadius: 16,
+		};
+	};
 	return (
-		<div className={styles.todoRow}>
-			<div className={styles.invoice}>{title}</div>
-			<div className={styles.status}>
-				<span
-					style={{
-						backgroundColor: status === "in progress" ? "#FFFAEB" : status === "pending" ? "#F2F4F7" : status === "overdue" ? "#FEF3F2" : "#ECFDF3",
-						color: status === "in progress" ? "#B54708" : status === "pending" ? "#344054" : status === "overdue" ? "#B42318" : "#027A48",
-						padding: "2px 8px",
-						borderRadius: 16,
-					}}>
-					{status}
-				</span>
-			</div>
-			<div className={styles.dueDate}>{moment(createdAt).format("D MMM YY")}</div>
-		</div>
+		<tr className={styles.todoRow}>
+			<td className={styles.invoice}>{title}</td>
+			<td className={styles.status}>
+				<span style={styleHandler(status)}>{status}</span>
+			</td>
+			<td className={styles.dueDate}>{moment(createdAt).format("D MMM YY")}</td>
+		</tr>
 	);
 };
 
 export default TodoItem;
-
-// <tr className={styles.todoRow}>
-// 			<th className={styles.title}>{title}</th>
-// 			<th className={styles.status}>{status}</th>
-// 			<th className={styles.createdAt}>{createdAt}</th>
-// 		</tr>

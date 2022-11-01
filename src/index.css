@@ -5,8 +5,10 @@ a {
 	text-decoration: none;
 }
 body {
+	box-sizing: border-box;
 	background-color: #f4f6f4;
 	font-family: "Poppins";
+	height: 100vh;
 }
 body,
 select {

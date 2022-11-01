@@ -14,3 +14,21 @@ interface ICreate {
 	status: string;
 	text: string;
 }
+
+interface InputProps {
+	label: string;
+	name: string;
+	type: string;
+	placeholder: string;
+}
+
+interface SelectProps {
+	label: string;
+	name: string;
+	placeholder?: string;
+	children: IntrinsicAttributes;
+}
+
+interface SvgProps {
+	color: string;
+}

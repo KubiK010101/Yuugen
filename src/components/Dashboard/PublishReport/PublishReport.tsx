@@ -1,10 +1,10 @@
 /** @format */
 
+import { useTranslation } from "react-i18next";
 import React, { FC } from "react";
-import { Chart } from "./Chart/Chart";
 import moment from "moment";
 import styles from "./PublishReport.module.css";
-import { useTranslation } from "react-i18next";
+import { Chart } from "./Chart/Chart";
 
 interface Props {
 	overdue: number;
@@ -28,7 +28,7 @@ const PublishReport: FC<Props> = ({ overdue, finished, all, latestDate }) => {
 					<Chart data={finished} all={all} type={t("finished")} fullColor='#E5F2EA' partColor='#56B87D' />
 				</div>
 				<div className={styles.latestDate}>
-					<p>{t("LatestDate")}</p>
+					<p>{t("latestDate")}</p>
 					<p style={{ fontWeight: 300 }}>{moment(latestDate).format("D MMM YY")}</p>
 				</div>
 			</div>

@@ -5,6 +5,10 @@ import styles from "./Header.module.css";
 
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import DashboardSvg from "../../assets/svg/dashboard";
+import CreateSvg from "../../assets/svg/create";
+import LogoSvg from "../../assets/svg/logo";
+import BellIconSvg from "../../assets/svg/bellIcon";
 
 const Header: FC = () => {
 	const { t, i18n } = useTranslation();
@@ -17,7 +21,7 @@ const Header: FC = () => {
 			<div className={styles.leftContainer}>
 				<div className={styles.logoContainer}>
 					<div className={styles.imageContainer}>
-						<img src={require("../../assets/images/Logo.svg").default} alt='logo' />
+						<LogoSvg color='#BCC8BC' />
 					</div>
 				</div>
 				<div className={styles.navigationContainer}>
@@ -25,11 +29,9 @@ const Header: FC = () => {
 						children={({ isActive }) => {
 							return (
 								<div className={styles.navElementContainer}>
-									<img
-										className={styles.navIcon}
-										src={isActive ? require("../../assets/images/dashboardActive.svg").default : require("../../assets/images/dashboardInActive.svg").default}
-										alt='file-plus'
-									/>
+									<span className={styles.navIcon}>
+										<DashboardSvg color={isActive ? "#293329" : "#90A390"} />
+									</span>
 									<span className={isActive ? styles.active : styles.inActive}>{t("dashboard")}</span>
 								</div>
 							);
@@ -40,11 +42,9 @@ const Header: FC = () => {
 						children={({ isActive }) => {
 							return (
 								<div className={styles.navElementContainer}>
-									<img
-										className={styles.navIcon}
-										src={isActive ? require("../../assets/images/createActive.svg").default : require("../../assets/images/createInActive.svg").default}
-										alt='file-plus'
-									/>
+									<span className={styles.navIcon}>
+										<CreateSvg color={isActive ? "#293329" : "#90A390"} />
+									</span>
 									<span className={isActive ? styles.active : styles.inActive}>{t("create")}</span>
 								</div>
 							);
@@ -53,10 +53,9 @@ const Header: FC = () => {
 						to='/create-task'></NavLink>
 				</div>
 			</div>
-			<div className={styles.settings}>
-				<div className={styles.notification}>
-					<img src={require("../../assets/images/BellIcon.svg").default} alt='BellIcon' />
-				</div>
+
+			<div className={styles.notification}>
+				<BellIconSvg color='#546554' />
 			</div>
 		</header>
 	);

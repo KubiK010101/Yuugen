@@ -10,21 +10,33 @@
 	background-color: #f9fafb;
 }
 .invoice {
-	width: 50%;
 	font-family: "Poppins";
 	font-size: 14px;
 	font-weight: 500;
 	line-height: 20px;
 	letter-spacing: 0px;
 	text-align: left;
-	padding-left: 8px;
+	width: 56%;
 	color: #101b28;
+	padding-left: 8px;
+	text-align: left;
 }
-.status {
-	width: 25%;
-}
-
+.status,
 .dueDate {
-	width: 25%;
+	font-family: "Poppins";
+	font-style: normal;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 18px;
+	width: 22%;
+	padding-left: 12px;
+	text-align: left;
+}
+.dueDate {
+	font-family: "Poppins";
+	font-style: normal;
 	font-weight: 300;
+	font-size: 14px;
+	line-height: 20px;
+	color: #667085;
 }
